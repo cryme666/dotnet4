@@ -5,7 +5,7 @@ using UniversityApp.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace UniversityApp.Pages.Lecturers
+namespace UniversityApp.Pages.Subjects
 {
     public class IndexModel : PageModel
     {
@@ -16,11 +16,11 @@ namespace UniversityApp.Pages.Lecturers
             _context = context;
         }
 
-        public IList<Lecturer> Lecturers { get; set; }
+        public IList<Subject> Subjects { get; set; }
 
         public async Task OnGetAsync()
         {
-            Lecturers = await _context.Lecturer.ToListAsync();
+            Subjects = await _context.Subject.ToListAsync();
         }
     }
 }

@@ -1,0 +1,36 @@
+@page
+@model UniversityApp.Pages.Lecturers.EditModel
+@{
+    ViewData["Title"] = "Edit Lecturer";
+}
+
+<h1>Edit Lecturer</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Lecturer.LecturerID" />
+    <div class="form-group">
+        <label asp-for="Lecturer.FullName" class="control-label"></label>
+        <input asp-for="Lecturer.FullName" class="form-control" />
+        <span asp-validation-for="Lecturer.FullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Lecturer.Phone" class="control-label"></label>
+        <input asp-for="Lecturer.Phone" class="form-control" />
+        <span asp-validation-for="Lecturer.Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Lecturer.Workplace" class="control-label"></label>
+        <input asp-for="Lecturer.Workplace" class="form-control" />
+        <span asp-validation-for="Lecturer.Workplace" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Lecturer.Address" class="control-label"></label>
+        <input asp-for="Lecturer.Address" class="form-control" />
+        <span asp-validation-for="Lecturer.Address" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>

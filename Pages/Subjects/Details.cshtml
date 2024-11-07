@@ -1,0 +1,16 @@
+@page "{id:int}"
+@model UniversityApp.Pages.Subjects.DetailsModel
+@{
+    ViewData["Title"] = "Subject Details";
+}
+
+<h2>@Model.Subject.SubjectName</h2>
+
+<div>
+    <p><strong>Subject Name:</strong> @Model.Subject.SubjectName</p>
+</div>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Subject.SubjectID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

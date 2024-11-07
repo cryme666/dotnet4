@@ -1,0 +1,38 @@
+@page
+@model UniversityApp.Pages.Subjects.IndexModel
+@{
+    ViewData["Title"] = "Subjects List";
+}
+
+<h1>Subjects</h1>
+
+<p>
+    <a asp-page="Create">Create New Subject</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+        <tr>
+            <th>Subject Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subject in Model.Subjects)
+        {
+            <tr>
+            <tr>
+                <td>@subject.SubjectName</td>
+
+            </tr>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@subject.SubjectID">Edit</a> |
+                    <a asp-page="Details" asp-route-id="@subject.SubjectID">Details</a> |
+                    <a asp-page="Delete" asp-route-id="@subject.SubjectID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

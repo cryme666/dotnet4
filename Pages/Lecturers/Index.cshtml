@@ -1,24 +1,43 @@
 @page
-@model IndexModel
-<h2>Список лекторів</h2>
+@model UniversityApp.Pages.Lecturers.IndexModel
+@{
+    ViewData["Title"] = "Lecturers List";
+}
+
+<h1>Lecturers</h1>
+
+<p>
+    <a asp-page="Create">Create New Lecturer</a>
+</p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>Ім'я</th>
-            <th>Телефон</th>
-            <th>Місце роботи</th>
-            <th>Адреса</th>
+        <tr>
+            <th>Fullname</th>
+            <th>Phone</th>
+            <th>Workplace</th>
+            <th>Address</th>
+        </tr>
         </tr>
     </thead>
     <tbody>
         @foreach (var lecturer in Model.Lecturers)
         {
             <tr>
+            <tr>
                 <td>@lecturer.FullName</td>
                 <td>@lecturer.Phone</td>
                 <td>@lecturer.Workplace</td>
                 <td>@lecturer.Address</td>
             </tr>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@lecturer.LecturerID">Edit</a> |
+                    <a asp-page="Details" asp-route-id="@lecturer.LecturerID">Details</a> |
+                    <a asp-page="Delete" asp-route-id="@lecturer.LecturerID">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
+
