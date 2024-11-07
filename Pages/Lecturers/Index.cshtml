@@ -1,0 +1,24 @@
+@page
+@model IndexModel
+<h2>Список лекторів</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ім'я</th>
+            <th>Телефон</th>
+            <th>Місце роботи</th>
+            <th>Адреса</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lecturer in Model.Lecturers)
+        {
+            <tr>
+                <td>@lecturer.FullName</td>
+                <td>@lecturer.Phone</td>
+                <td>@lecturer.Workplace</td>
+                <td>@lecturer.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>
