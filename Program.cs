@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddRazorPages();
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
+builder.Services.AddHttpClient();
 
 builder.Services.AddDbContext<UniversityContext>(options =>
     options.UseMySql(
